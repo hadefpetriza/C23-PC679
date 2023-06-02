@@ -38,14 +38,11 @@ Capstone Project 24 May 2023
 --
 Dataset ditambah, model clasification ada organic dan recyclable(plastik, kayu, seng/besi) nonrecycle (sampah medis, sampah basah, sampah kaca)
 
-1. https://www.kaggle.com/code/beyzanks/waste-classification-with-cnn  (data dibagi menjadi 2 Organic dan Recyclable)
+1. Citation = Sashaank Sekar, 2019, Waste Classification data, https://www.kaggle.com/code/beyzanks/waste-classification-with-cnn
 
-2. https://www.kaggle.com/datasets/sapal6/waste-classification-data-v2 (Mirip Kaya 1 tapi tambahan Non- Recyclable)
+2. Citation = sapal6, 2019, Waste Classification Data v2, https://www.kaggle.com/datasets/sapal6/waste-classification-data-v2
 
-3.https://www.kaggle.com/datasets/wangziang/waste-pictures    (Data Per item, belum dikategorikan khsuus)
-
-4. https://www.kaggle.com/datasets/arkadiyhacks/drinking-waste-classification
-
+3.Citation = 且听风吟, 2019, waste_pictures, https://www.kaggle.com/datasets/wangziang/waste-pictures
 
 
 Android pakai native kotlin (mandatory), bisa pake firebase buat autentikasi
