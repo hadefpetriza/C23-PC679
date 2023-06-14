@@ -1,0 +1,31 @@
+{% extends "layout.html"%} {% block title %} Prediction - Waste Detection {%
+endblock %} {% block content %}
+<div class="container py-5">
+  <header class="text-white text-center">
+    <h1 class="display-4">Waste Detection</h1>
+    <p class="lead mb-5">You will see the prediction of the input image.</p>
+  </header>
+
+  <header class="text-white text-center">
+    <h1 class="display-5">Prediction</h1>
+    {% if predictions %}
+    <h2 class="display-4 text-dark font-weight-bold">{{predictions}}</h2>
+    {% else %}
+    <h2 class="display-4 text-dark font-weight-bold">{{err}}</h2>
+    {% endif %}
+  </header>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <button class="find-state btn-primary my-3">
+        Cari Tempat Paling cocok untuk sampahmu
+      </button>
+      <div class="status">{{search}}</div>
+      <script src="{{url_for('static', filename='js/geoloc.js')}}"></script>
+    </div>
+  </div>
+</div>
+<div id="map"></div>
+
+{% endblock %}
