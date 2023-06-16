@@ -1,3 +1,8 @@
+#map {
+  height: 400px;
+  width: 90%;
+  left: 5%;
+}
 #upload {
   opacity: 0;
 }
@@ -37,8 +42,4 @@ body {
   min-height: 100vh;
   background-color: #0044ff;
   background-image: linear-gradient(147deg, #00ff5538 0%, #02ff74 100%);
-}
-
-#map {
-  height: 100%;
 }

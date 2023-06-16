@@ -1,8 +1,8 @@
-{% extends "layout.html"%} {% block title %} Prediction - Waste Detection {%
-endblock %} {% block content %}
+{% extends "layout.html"%} {% block title %} Prediction - Ecocycle {% endblock
+%} {% block content %}
 <div class="container py-5">
   <header class="text-white text-center">
-    <h1 class="display-4">Waste Detection</h1>
+    <h1 class="display-4">Ecocycle Detection</h1>
     <p class="lead mb-5">You will see the prediction of the input image.</p>
   </header>
 
@@ -18,14 +18,15 @@ endblock %} {% block content %}
 <div class="container">
   <div class="row">
     <div class="col text-center">
-      <button class="find-state btn-primary my-3">
-        Cari Tempat Paling cocok untuk sampahmu
-      </button>
-      <div class="status">{{search}}</div>
-      <script src="{{url_for('static', filename='js/geoloc.js')}}"></script>
+      <form action="{{ url_for('maps') }}">
+        <div id="maps_keyword display-5"></div>
+        <div class="col text-center display-5 font-weight-bold">
+          Cari Tempat Paling cocok untuk sampahmu
+        </div>
+        <input class="btn btn-primary my-3" type="submit" />
+      </form>
     </div>
   </div>
 </div>
-<div id="map"></div>
 
 {% endblock %}
