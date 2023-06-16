@@ -1,5 +1,5 @@
 # C23-PC679
---
+
 Our team is creating an app that leverages artificial intelligence to solve the problem of waste and resource inefficiency in the production process. The app connects companies that produce residues or unused materials with companies that need those materials for the manufacture of their products.
 --
 
