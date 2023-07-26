@@ -1,0 +1,80 @@
+{% extends "layout.html"%} {% block title %} Home - Ecocycle {% endblock %}
+{%block content %}
+<div class="container py-5">
+  <div class="counters">
+    <header>
+      <h1 class="counter display-3" data-count="3580">0</h1>
+    </header>
+    <div class="counters">
+      <h1 class="counter-heading">Unmanaged Waste from</h1>
+      <h1 class="counters display-4" style="font-size: xx-large">
+        10,296,636.51 (<strong>Ton/Year</strong>)
+        <br />
+        <strong>In Indonesia</strong>
+      </h1>
+      <p style="font-size: small; color: white">
+        source :
+        <a
+          href="https://sipsn.menlhk.go.id/sipsn/"
+          style="color: black; text-decoration: underline"
+          >SIPSN - Sistem Informasi Pengelolaan Sampah Nasional
+        </a>
+      </p>
+      <img
+        src="{{url_for('static', filename='assets/img/sampah.png')}}"
+        alt="sampah"
+        style="height: 550px; margin-top: -8%; pointer-events: none"
+      />
+    </div>
+  </div>
+
+  <br /><br />
+  <header class="text-white text-center">
+    <img
+      src="{{url_for('static', filename='assets/img/logos.png')}}"
+      alt="logo Ecocycle"
+      style="height: 100px"
+    />
+    <h1 class="display-4">Ecocycle</h1>
+
+    <p class="lead mb-5">
+      Hi {{session.username}}!! <br />Welcome to the Ecocycle<br />
+      A webapp to detect type of waste. Just drop an image of waste and see
+      where to put in.
+    </p>
+  </header>
+  <a href="{{ url_for('predict')}}" class="btn btn-light m-0 rounded-pill px-4"
+    >Lets Predict</a
+  >
+  <br /><br /><br /><br />
+</div>
+
+<script>
+  const counters = document.querySelectorAll(".counter");
+
+  counters.forEach((counter) => {
+    let initial_count = 0;
+    const final_count = counter.dataset.count;
+    // console.log(final_count);
+
+    let counting = setInterval(updateCounting, 0.1);
+
+    function updateCounting() {
+      if (initial_count < 10000) {
+        initial_count += 4;
+        counter.innerText = (initial_count / 100).toFixed(1) + "%";
+      }
+
+      if (initial_count >= 1000000) {
+        initial_count += 500000;
+        counter.innerText = (initial_count / 1000000).toFixed(1) + "M+";
+      }
+
+      if (initial_count >= final_count) {
+        clearInterval(counting);
+      }
+    }
+  });
+</script>
+
+{% endblock %}

@@ -5,7 +5,16 @@ function initMap() {
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
     const search = document.getElementById("maps_keyword");
+    const filename = document.getElementById("filename");
+    const file = filename.textContent;
     const search_word = search.textContent;
+    // send it into flask
+    const data = {
+      latitude: lat,
+      longitude: lng,
+      keyword: search_word,
+      file: file,
+    };
 
     // Set the initial map location
     var center = { lat: lat, lng: lng }; // San Francisco coordinates
@@ -19,8 +28,8 @@ function initMap() {
     // Perform a nearby search
     var request = {
       location: center,
-      radius: "5000", // Define the search radius in meters
-      type: ["TPA"], // Specify the type of place you want to search for
+      radius: "10000", // Define the search radius in meters
+      type: ["sampah"], // Specify the type of place you want to search for
       keyword: search_word,
     };
 
@@ -30,18 +39,15 @@ function initMap() {
         map: map,
         position: place.geometry.location,
         title: place.name,
-        desc: place.photos,
       });
 
       var content =
         "<strong>" +
         place.name +
         "</strong><br>" +
-        "Address: " +
-        place.formatted_address +
-        "<br>" +
-        "Rating: " +
-        place.rating;
+        '<a href="https://www.google.com/maps/place/?q=place_id:' +
+        place.place_id +
+        '" target="_blank">View on Google Maps</a></div>';
 
       var infowindow = new google.maps.InfoWindow({
         content: content,
@@ -63,7 +69,7 @@ function initMap() {
   };
 
   const error = () => {
-    map.textContent = "Lokasi tidak dapat ditemukan";
+    map.textContent = "Please Turn On Your Location";
   };
 
   navigator.geolocation.getCurrentPosition(success, error);

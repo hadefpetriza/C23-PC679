@@ -1,9 +1,16 @@
-{% extends "layout.html"%} {% block title %} Ecocycle {% endblock %} {% block
-content %}
+{% extends "layout.html"%} {% block title %} Prediction - Ecocycle {% endblock
+%} {% block content %}
 <div class="container py-5">
   <header class="text-white text-center">
+    <img
+      src="{{url_for('static', filename='assets/img/logos.png')}}"
+      alt="logo Ecocycle"
+      style="height: 100px"
+    />
     <h1 class="display-4">Ecocycle</h1>
+
     <p class="lead mb-5">
+      Hi {{session.username}}!! <br />Welcome to the Ecocycle<br />
       A webapp to detect type of waste. Just drop an image of waste and see the
       where to put in.
     </p>
@@ -35,7 +42,7 @@ content %}
           <div class="input-group-append">
             <label class="btn btn-light m-0 rounded-pill px-4" for="upload">
               <i class="fa fa-cloud-upload mr-2 text-muted"></i
-              ><small class="text-uppercase font-weight-bold text-muted"
+              ><small class="text-uppercase font-weight-bold"
                 >Choose file</small
               ></label
             >
@@ -57,12 +64,16 @@ content %}
             src="#"
           />
         </div>
+        <br />
 
         <!-- Submit button-->
         <div class="container">
           <div class="row">
             <div class="col text-center">
-              <input class="btn btn-primary my-3" type="submit" />
+              <input
+                class="btn btn-light m-0 rounded-pill px-4"
+                type="submit"
+              />
             </div>
           </div>
         </div>
