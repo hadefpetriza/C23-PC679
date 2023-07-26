@@ -5,11 +5,10 @@ import numpy as np
 from PIL import Image
 import tensorflow as tf
 
-
-
 # Loading model
 interpreter = tf.lite.Interpreter(model_path="model_classification.tflite")
 interpreter.allocate_tensors()
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 # Preparing and pre-processing the image
 def preprocess_img(img_path):
@@ -18,8 +17,6 @@ def preprocess_img(img_path):
     img2arr = np.array(img_resize, dtype=np.float32) / 255.0
     img_reshape = np.expand_dims(img2arr, axis=0)
     return img_reshape
-
-
 
 # Predicting function
 def predict_result(predict):
@@ -31,4 +28,8 @@ def predict_result(predict):
     output_data = interpreter.get_tensor(output_details[0]['index'])
     predicted_class = np.argmax(output_data[0], axis=-1)
     return predicted_class
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 

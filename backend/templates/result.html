@@ -1,5 +1,5 @@
-{% extends "layout.html"%} {% block title %} Prediction - Ecocycle {% endblock
-%} {% block content %}
+{% extends "layout.html"%} {% block title %} Results - Ecocycle {% endblock %}
+{% block content %}
 <div class="container py-5">
   <header class="text-white text-center">
     <h1 class="display-4">Ecocycle Detection</h1>
@@ -21,9 +21,9 @@
       <form action="{{ url_for('maps') }}">
         <div id="maps_keyword display-5"></div>
         <div class="col text-center display-5 font-weight-bold">
-          Cari Tempat Paling cocok untuk sampahmu
+          Find the Best places to put your waste
         </div>
-        <input class="btn btn-primary my-3" type="submit" />
+        <input class="btn btn-primary my-3" type="submit" value="Lets Find" />
       </form>
     </div>
   </div>

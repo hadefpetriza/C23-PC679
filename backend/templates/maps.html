@@ -1,8 +1,15 @@
 {% extends "layout.html"%} {% block title %} Maps - Ecocycle {% endblock %} {%
 block content %}
-<h1 class="display-5">Cari Tempat Paling cocok untuk sampahmu</h1>
-<div id="maps_keyword">{{search}}</div>
-<div id="map"></div>
-<script src="{{url_for('static', filename='js/map.js')}}"></script>
+<div id="map-container" class="map-container">
+  <h1 class="display-5" style="padding-top: 30px">
+    Find the Nearest Places to Store your Waste<br />
+  </h1>
+  <br />
+  <div id="map" class="map">
+    <div id="maps_keyword">{{search}}</div>
+    <div id="filename">{{filename}}</div>
+  </div>
+</div>
+<br />
 
 {% endblock %}

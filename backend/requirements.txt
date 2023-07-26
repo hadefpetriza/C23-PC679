@@ -5,3 +5,13 @@ Pillow==9.3.0
 tensorflow==2.10.0
 flask_cors
 pandas
+google.cloud
+flask_mysqldb
+flask_login
+jwt
+google-cloud-storage
+google-cloud-datastore
+python-dotenv
+flask-oauthlib
+requests
+bcrypt

@@ -1,8 +1,37 @@
+.footer {
+  background-color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.95);
+  position: sticky;
+  text-align: center;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
 #map {
-  height: 400px;
+  position: sticky;
+  height: 500px;
   width: 90%;
   left: 5%;
+  z-index: 1;
 }
+
+.map-container {
+  margin-bottom: 10px;
+}
+
+.map.hidden {
+  display: none;
+}
+
 #upload {
   opacity: 0;
 }
@@ -42,4 +71,90 @@ body {
   min-height: 100vh;
   background-color: #0044ff;
   background-image: linear-gradient(147deg, #00ff5538 0%, #02ff74 100%);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.border {
+  align-content: center;
+  align-self: center;
+  margin-top: 2%;
+  padding: 80px 80px;
+  top: 20px;
+  width: 700px;
+  height: 550px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+  padding: 10px 40px;
+  background-color: #236b8e;
+  color: #ffffff;
+  font-style: oblique;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.textbox {
+  padding: 10px 40px;
+  background-color: #236b8e;
+  border-radius: 10px;
+}
+
+::placeholder {
+  color: #ffffff;
+  opacity: 1;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.word {
+  color: #ffffff;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.bottom {
+  font-size: small;
+  font-style: oblique;
+  font-weight: bold;
+}
+.masthead {
+  padding: 50px;
+  margin-top: -35px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.masthead-brand {
+  float: left;
+}
+.nav-masthead {
+  float: right;
+}
+.nav {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.counters {
+  align-items: center;
+  color: #ffffff;
+  font-size: large;
+}
+.counter-heading {
+  align-items: center;
+  color: #ffffff;
+  font-size: larger;
+}
+
+.counter {
+  text-align: center;
+  font-size: 100px;
+  transition: 0.3s ease-in-out;
+  color: red;
+  font-family: "roboto Black";
 }
